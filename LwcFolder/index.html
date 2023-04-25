@@ -1,0 +1,43 @@
+<template>
+    <lightning-card>
+        
+            <!-- <h3 slot="title">
+                <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon> 
+            </h3> -->
+    
+        <div class="slds-m-bottom--medium">
+            <c-resourrce-records-cmp onmyeventdemo={handleChangeresourcedetailsAction}></c-resourrce-records-cmp>
+        </div>
+        <br/><br/>
+            <h1><b>Resource Detail Records</b></h1>        
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" border="1" cellspacing="0"    cellpadding="0"  style="border-collapse:collapse;">
+            <thead>
+                 <tr>
+                        <th>Project</th>
+                        <th>Served Company</th>
+                        <th>Location</th>
+                        <th>Avalability In</th>
+                        <!-- <th>Resource</th> -->
+                        <th>Start date</th>
+                        <th>End Date</th>
+                        <th>Worked Skill Set</th>
+                    </tr>
+             </thead> 
+             <template for:each={records} for:item='resdetailItem'>
+                  <tr key={resdetailItem.Id}>
+                        <td>{resdetailItem.Project__c}</td>
+                        <td>{resdetailItem.Served_company__c}</td>
+                        <td>{resdetailItem.Location__c}</td>
+                        <td>{resdetailItem.Availability_in__c}</td>
+                        <!-- <td>{resdetailItem.Resource__c}</td> -->
+                        <td>{resdetailItem.Start_date__c}</td>
+                        <td>{resdetailItem.End_date__c}</td>
+                        <td>{resdetailItem.Worked_skill_set__c}</td>             
+                 </tr>
+              </template>
+        </table>
+    
+        
+    </lightning-card>
+
+</template>
